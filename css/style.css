@@ -1,40 +1,57 @@
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 .header {
   overflow: hidden;
+  display: flex;
   height: 6%;
+  width: 100%;
   background-color: #fbfcfc;
   box-shadow: 0px 1px 10px #999;
   z-index: 2;
   position: relative;
 }
 
-.header #icon img {
+#icon {
   float: left;
-  padding: 10px 35px 10px 10px;
+  display: flex;
+  align-items: center;
 }
 
-.header #nav {
+#blank {
   float: left;
-  width: 100%;
+  display: flex;
+  padding: ;
 }
 
-.header #nav .button {
-  float: left;
-  display: block;
+#icon img {
+  padding: 0px 20px;
+}
+
+#nav {
+  float: right;
+  display: flex;
+  align-items: center;
+}
+
+#nav .button {
+  font-size: medium;
   color: #7b7d7d;
-  text-align: center;
-  padding: 30px 16px;
   text-decoration: none;
+  padding: 30px 18px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
 }
 
-.header #nav .button:hover {
+#nav .button:hover {
   background-color: #ecf0f1;
 }
 
 #map {
   height: 94%;
-  position: static;
+  position: relative;
   z-index: 1;
 }

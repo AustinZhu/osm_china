@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html style="height: 100%; margin: 0; padding: 0;">
+  <head>
+    <title>Mapbox Style - OpenStreetMap China</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="js/leaflet.css" />
+    <link rel="stylesheet" href="js/style.css?v=2" />
+    <script src="js/leaflet.js"></script>
+    <script src="js/leaflet-hash.js"></script>
+    <style type="text/css">
+      .leaflet-tile-container {
+        pointer-events: auto;
+      }
+    </style>
+  </head>
+
+  <body style="height: 100%; margin: 0; padding: 0; background-color: #d0d3d4;">
+    <div class="header">
+      <div id="nav">
+        <a id="icon" href="index.html"
+          ><img src="img/logo.png" width="256" height="60"
+        /></a>
+        <a class="button" href="history.html">History Overlay</a>
+        <a class="button" href="mapbox.html">Mapbox Style</a>
+        <a class="button" href="covid.html">Covid map</a>
+        <a class="button" href="">About</a>
+      </div>
+    </div>
+
+    <div id="map"></div>
+    <script>
+      //<![CDATA[
+      var map = L.map("map").setView([36.756, 108.281], 5);
+
+      //L.tileLayer("http://18.178.237.84/hot/{z}/{x}/{y}.png", {
+      L.tileLayer(
+        "https://api.mapbox.com/styles/v1/zymzym123/ckb1qwpuq0gvu1inzo3bfo7pf/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoienltenltMTIzIiwiYSI6ImNqOGI5OWVvNDBiaTgycXA2NW12dG1iYWQifQ.PyNXU4RFs3EBxsgnw1gt9Q",
+        {
+          attribution:
+            '&copy; <a href="https://www.tianditu.gov.cn/">Tianditu </a>&copy; <a href="https://www.mapbox.com/about/maps/">Mapbox </a>&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        }
+      ).addTo(map);
+
+      L.tileLayer(
+        "https://t4.tianditu.gov.cn/DataServer?T=cva_w&x={x}&y={y}&l={z}&tk=f39128542d50872377c7d492b72d4d00"
+      ).addTo(map);
+
+      L.tileLayer(
+        "https://t0.tianditu.gov.cn/DataServer?T=ibo_w&x={x}&y={y}&l={z}&tk=f39128542d50872377c7d492b72d4d00"
+      ).addTo(map);
+
+      var hash = L.hash(map);
+      //]]>
+    </script>
+  </body>
+</html>

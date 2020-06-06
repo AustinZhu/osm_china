@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html style="height: 100%; margin: 0; padding: 0;">
+  <head>
+    <title>Covid Map - OpenStreetMap China</title>
+    <link rel="stylesheet" href="js/leaflet.css" />
+    <link rel="stylesheet" href="js/style.css?v=2" />
+    <script src="js/leaflet.js"></script>
+    <script src="js/leaflet-heat.js"></script>
+  </head>
+
+  <body style="height: 100%; margin: 0; padding: 0; background-color: #d0d3d4;">
+    <div class="header">
+      <div id="nav">
+        <a id="icon" href="index.html"
+          ><img src="img/logo.png" width="256" height="60"
+        /></a>
+        <a class="button" href="history.html">History Overlay</a>
+        <a class="button" href="mapbox.html">Mapbox Style</a>
+        <a class="button" href="covid.html">Covid map</a>
+        <a class="button" href="">About</a>
+      </div>
+    </div>
+
+    <div id="map"></div>
+
+    <!-- <script src="../node_modules/simpleheat/simpleheat.js"></script>
+<script src="../src/HeatLayer.js"></script> -->
+    <script src="data/pt.js"></script>
+    <script>
+      var map = L.map("map").setView([36.756, 108.281], 5);
+
+      var tiles = L.tileLayer("https://{s}.tile.osm.org/{z}/{x}/{y}.png", {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      }).addTo(map);
+
+      var heat = L.heatLayer(addressPoints, {
+        maxZoom: 6,
+        radius: 45,
+        blur: 40,
+      }).addTo(map);
+    </script>
+  </body>
+</html>

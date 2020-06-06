@@ -4,10 +4,13 @@
   <head>
     <title>OpenStreetMap China</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="js/leaflet.css" />
-    <link rel="stylesheet" href="js/style.css?v=2" />
-    <script src="js/leaflet.js"></script>
-    <script src="js/leaflet-hash.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-hash/0.2.1/leaflet-hash.min.js"></script>
     <style type="text/css">
       .leaflet-tile-container {
         pointer-events: auto;
@@ -21,9 +24,9 @@
         <a id="icon" href="index.html"
           ><img src="img/logo.png" width="256" height="60"
         /></a>
-        <a class="button" href="history.html">History Overlay</a>
-        <a class="button" href="mapbox.html">Mapbox Style</a>
-        <a class="button" href="covid.html">Covid map</a>
+        <a class="button" href="html/history.html">History Overlay</a>
+        <a class="button" href="html/mapbox.html">Mapbox Style</a>
+        <a class="button" href="html/covid.html">Covid map</a>
         <a class="button" href="">About</a>
       </div>
     </div>
@@ -32,7 +35,7 @@
 
     <script>
       var map = L.map("map").setView([36.756, 108.281], 5);
-      L.tileLayer("http://18.178.237.84/hot/{z}/{x}/{y}.png", {
+      L.tileLayer("https://18.178.237.84/hot/{z}/{x}/{y}.png", {
         attribution:
           '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         maxZoom: 10,

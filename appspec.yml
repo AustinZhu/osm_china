@@ -2,20 +2,4 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/html
-Hooks:
-  BeforeInstall: 
-    - location: donothing.sh
-      timeout: 1
-  AfterInstall:
-    - location: donothing.sh
-      timeout: 1
-  AfterAllowTestTraffic:
-    - location: donothing.sh
-      timeout: 1
-  BeforeAllowTraffic:
-    - location: donothing.sh
-      timeout: 1
-  AfterAllowTraffic:
-    - location: donothing.sh
-      timeout: 1
+    destination: /var/www/html/
